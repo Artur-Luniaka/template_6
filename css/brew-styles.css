@@ -784,6 +784,121 @@ body {
   background: var(--white-transparent-95);
 }
 
+/* Flip Card Styles */
+.flip-card {
+  perspective: 1000px;
+  cursor: pointer;
+  height: 100%;
+  min-height: 320px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  min-height: 320px;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: var(--bubble-spacing-md);
+  box-sizing: border-box;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(
+    135deg,
+    var(--matcha-green) 0%,
+    var(--herbal-mint) 100%
+  );
+  color: white;
+  overflow: hidden;
+}
+
+.flip-card-back .update-bubble-title,
+.flip-card-back .update-bubble-description,
+.flip-card-back .update-bubble-features h4,
+.flip-card-back .update-bubble-features li {
+  color: white;
+}
+
+.flip-card-back-title {
+  color: white !important;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: var(--bubble-spacing-sm);
+  text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  line-height: 1.3;
+}
+
+.flip-card-back-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--bubble-spacing-sm);
+}
+
+.flip-card-back-content p {
+  color: white;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0;
+  opacity: 0.95;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.flip-hint {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--tapioca-brown);
+  font-style: italic;
+  margin-top: var(--bubble-spacing-xs);
+  opacity: 0.7;
+}
+
+/* Disable hover effect on flip cards to prevent conflicts */
+.flip-card .update-bubble-card:hover {
+  transform: none;
+  box-shadow: 0 4px 15px var(--shadow-soft);
+  background: var(--white-transparent-90);
+}
+
+.flip-card-back:hover {
+  transform: none;
+  box-shadow: 0 4px 15px var(--shadow-soft);
+}
+
+/* Ensure only the flip card itself is clickable */
+.flip-card * {
+  pointer-events: none;
+}
+
+.flip-card {
+  pointer-events: auto;
+}
+
 .story-bubble-card {
   background: var(--cup-clear);
   padding: var(--bubble-spacing-lg);
@@ -797,11 +912,116 @@ body {
   box-shadow: 0 8px 30px var(--shadow-deep);
 }
 
+/* Boba Stories Flip Card Styles */
+.story-flip-card {
+  perspective: 1000px;
+  min-height: 320px;
+}
+
+.story-flip-card .flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  min-height: 320px;
+}
+
+.story-flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.story-flip-card .flip-card-front,
+.story-flip-card .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--bubble-radius-lg);
+  padding: var(--bubble-spacing-md);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.story-flip-card .flip-card-back {
+  background: linear-gradient(
+    135deg,
+    var(--lychee-pink) 0%,
+    var(--strawberry-red) 100%
+  );
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.story-flip-card .flip-card-back .story-bubble-title,
+.story-flip-card .flip-card-back .story-bubble-text,
+.story-flip-card .flip-card-back .story-bubble-recipe h4,
+.story-flip-card .flip-card-back .story-bubble-recipe p {
+  color: white;
+}
+
+.story-flip-card-back-title {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: var(--bubble-spacing-sm);
+  line-height: 1.3;
+}
+
+.story-flip-card-back-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bubble-spacing-sm);
+}
+
+.story-flip-card-back-content p {
+  color: white;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.story-back-author {
+  margin-top: var(--bubble-spacing-sm);
+  padding-top: var(--bubble-spacing-sm);
+  border-top: 1px solid var(--white-transparent-30);
+}
+
+.story-back-author strong,
+.story-back-author .story-bubble-date {
+  color: white;
+}
+
+/* Disable hover effect on story flip cards to prevent conflicts */
+.story-flip-card .story-bubble-card:hover {
+  transform: none;
+  box-shadow: 0 4px 15px var(--shadow-soft);
+  background: var(--white-transparent-90);
+}
+
+.story-flip-card .flip-card-back:hover {
+  transform: none;
+  box-shadow: 0 4px 15px var(--shadow-soft);
+}
+
+/* Ensure only the story flip card itself is clickable */
+.story-flip-card * {
+  pointer-events: none;
+}
+
+.story-flip-card {
+  pointer-events: auto;
+}
+
 .update-bubble-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: var(--bubble-spacing-sm);
+  margin-bottom: var(--bubble-spacing-xs);
   flex-wrap: wrap;
   gap: var(--bubble-spacing-xs);
 }
@@ -809,7 +1029,7 @@ body {
 .update-bubble-date,
 .story-bubble-date {
   color: var(--tapioca-brown);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 500;
 }
 
@@ -827,9 +1047,9 @@ body {
 .update-bubble-title {
   color: var(--matcha-green);
   margin-bottom: var(--bubble-spacing-xs);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: bold;
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 .story-bubble-title {
@@ -840,22 +1060,22 @@ body {
 
 .update-bubble-description {
   color: var(--boba-black);
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: 0.85rem;
+  line-height: 1.4;
   margin-bottom: var(--bubble-spacing-sm);
   opacity: 0.9;
 }
 
 .update-bubble-features {
-  margin-top: var(--bubble-spacing-sm);
-  padding-top: var(--bubble-spacing-sm);
+  margin-top: var(--bubble-spacing-xs);
+  padding-top: var(--bubble-spacing-xs);
   border-top: 1px solid var(--black-transparent-10);
 }
 
 .update-bubble-features h4 {
   color: var(--boba-black);
   margin-bottom: var(--bubble-spacing-xs);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -870,10 +1090,10 @@ body {
 }
 
 .update-bubble-features li {
-  padding: var(--bubble-spacing-xs) 0;
+  padding: calc(var(--bubble-spacing-xs) / 2) 0;
   position: relative;
-  font-size: 0.85rem;
-  line-height: 1.4;
+  font-size: 0.8rem;
+  line-height: 1.3;
 }
 
 .update-bubble-features li::before {
@@ -1019,6 +1239,131 @@ body {
 
   .contact-bubble-link {
     font-size: 0.9rem;
+  }
+
+  .flip-card {
+    min-height: 280px;
+  }
+
+  .flip-card-inner {
+    min-height: 280px;
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    padding: var(--bubble-spacing-sm);
+  }
+
+  .flip-card-back-title {
+    font-size: 0.9rem;
+    margin-bottom: calc(var(--bubble-spacing-xs) / 2);
+    line-height: 1.2;
+  }
+
+  .flip-card-back-content {
+    gap: calc(var(--bubble-spacing-xs) / 2);
+  }
+
+  .flip-card-back-content p {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .flip-hint {
+    font-size: 0.65rem;
+    margin-top: calc(var(--bubble-spacing-xs) / 2);
+  }
+
+  .update-bubble-title {
+    font-size: 0.9rem;
+    line-height: 1.1;
+  }
+
+  .update-bubble-description {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .update-bubble-features {
+    margin-top: calc(var(--bubble-spacing-xs) / 2);
+    padding-top: calc(var(--bubble-spacing-xs) / 2);
+  }
+
+  .update-bubble-features h4 {
+    font-size: 0.75rem;
+  }
+
+  .update-bubble-features li {
+    padding: calc(var(--bubble-spacing-xs) / 3) 0;
+    font-size: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .update-bubble-header {
+    margin-bottom: calc(var(--bubble-spacing-xs) / 2);
+  }
+
+  .update-bubble-date,
+  .story-bubble-date {
+    font-size: 0.75rem;
+  }
+
+  /* Boba Stories Flip Card Mobile Styles */
+  .story-flip-card {
+    min-height: 280px;
+  }
+
+  .story-flip-card .flip-card-inner {
+    min-height: 280px;
+  }
+
+  .story-flip-card .flip-card-front,
+  .story-flip-card .flip-card-back {
+    padding: var(--bubble-spacing-sm);
+  }
+
+  .story-flip-card-back-title {
+    font-size: 0.9rem;
+    margin-bottom: calc(var(--bubble-spacing-xs) / 2);
+    line-height: 1.2;
+  }
+
+  .story-flip-card-back-content {
+    gap: calc(var(--bubble-spacing-xs) / 2);
+  }
+
+  .story-flip-card-back-content p {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .story-back-author {
+    margin-top: var(--bubble-spacing-xs);
+    padding-top: var(--bubble-spacing-xs);
+  }
+
+  .story-bubble-title {
+    font-size: 0.9rem;
+    line-height: 1.1;
+  }
+
+  .story-bubble-content p {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .story-bubble-recipe {
+    margin-top: var(--bubble-spacing-xs);
+    padding: var(--bubble-spacing-xs);
+  }
+
+  .story-bubble-recipe h4 {
+    font-size: 0.75rem;
+  }
+
+  .story-bubble-recipe p {
+    font-size: 0.75rem;
+    line-height: 1.2;
   }
 }
 
@@ -1651,6 +1996,132 @@ body {
 
   .update-bubble-features ul {
     grid-template-columns: 1fr;
+  }
+
+  .flip-card {
+    min-height: 320px;
+  }
+
+  .flip-card-inner {
+    min-height: 320px;
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    padding: var(--bubble-spacing-sm);
+  }
+
+  .flip-card-back-title {
+    font-size: 1rem;
+    margin-bottom: calc(var(--bubble-spacing-xs) / 2);
+    line-height: 1.25;
+  }
+
+  .flip-card-back-content {
+    gap: calc(var(--bubble-spacing-xs) / 2);
+  }
+
+  .flip-card-back-content p {
+    font-size: 0.8rem;
+    line-height: 1.35;
+  }
+
+  .flip-hint {
+    font-size: 0.7rem;
+    margin-top: calc(var(--bubble-spacing-xs) / 2);
+  }
+
+  .update-bubble-title {
+    font-size: 0.95rem;
+    line-height: 1.15;
+  }
+
+  .update-bubble-description {
+    font-size: 0.85rem;
+    line-height: 1.35;
+  }
+
+  .update-bubble-features {
+    margin-top: calc(var(--bubble-spacing-xs) / 2);
+    padding-top: calc(var(--bubble-spacing-xs) / 2);
+  }
+
+  .update-bubble-features h4 {
+    font-size: 0.8rem;
+  }
+
+  .update-bubble-features li {
+    padding: calc(var(--bubble-spacing-xs) / 3) 0;
+    font-size: 0.8rem;
+    line-height: 1.25;
+  }
+
+  .update-bubble-header {
+    margin-bottom: calc(var(--bubble-spacing-xs) / 2);
+  }
+
+  .update-bubble-date,
+  .story-bubble-date {
+    font-size: 0.8rem;
+  }
+
+  /* Boba Stories Flip Card Tablet Styles */
+  .story-flip-card {
+    min-height: 320px;
+  }
+
+  .story-flip-card .flip-card-inner {
+    min-height: 320px;
+  }
+
+  .story-flip-card .flip-card-front,
+  .story-flip-card .flip-card-back {
+    padding: var(--bubble-spacing-sm);
+  }
+
+  .story-flip-card-back-title {
+    font-size: 1rem;
+    margin-bottom: calc(var(--bubble-spacing-xs) / 2);
+    line-height: 1.25;
+  }
+
+  .story-flip-card-back-content {
+    gap: calc(var(--bubble-spacing-xs) / 2);
+  }
+
+  .story-flip-card-back-content p {
+    font-size: 0.8rem;
+    line-height: 1.35;
+  }
+
+  .story-back-author {
+    margin-top: var(--bubble-spacing-sm);
+    padding-top: var(--bubble-spacing-sm);
+  }
+
+  .story-bubble-title {
+    font-size: 0.95rem;
+    line-height: 1.15;
+  }
+
+  .story-bubble-content p {
+    font-size: 0.85rem;
+    line-height: 1.35;
+  }
+
+  .story-bubble-recipe {
+    margin-top: var(--bubble-spacing-sm);
+    padding: var(--bubble-spacing-sm);
+  }
+
+  .story-bubble-recipe h4 {
+    font-size: 0.8rem;
+    line-height: 1.25;
+  }
+
+  .story-bubble-recipe p {
+    font-size: 0.8rem;
+    line-height: 1.25;
   }
 
   .boba-stories-container {

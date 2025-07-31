@@ -2,31 +2,75 @@
   "stories": [
     {
       "author": "Chef Maria",
-      "date": "December 14, 2024",
+      "date": "April March 2025",
       "title": "My Perfect Matcha Creation",
-      "content": "After experimenting with over 50 different combinations, I finally created the ultimate matcha bubble tea! The secret was using premium ceremonial grade matcha powder and adding just a hint of vanilla. The result was absolutely divine - smooth, creamy, and perfectly balanced.",
-      "recipe": "Premium Matcha + Vanilla Syrup + Tapioca Pearls + 30% Sweetness"
+      "content": "Created the ultimate matcha bubble tea using premium ceremonial grade matcha powder with vanilla. Smooth, creamy, and perfectly balanced.",
+      "recipe": "Premium Matcha + Vanilla Syrup + Tapioca Pearls + 30% Sweetness",
+      "backTitle": "The Matcha Journey",
+      "backContent": [
+        "My journey began with curiosity about Japanese tea culture and months of research into different matcha grades.",
+        "The breakthrough came when I discovered ceremonial grade matcha's natural sweetness pairs beautifully with vanilla."
+      ]
     },
     {
       "author": "Gamer Alex",
-      "date": "December 12, 2024",
+      "date": "April March 2025",
       "title": "The Most Unusual Combination",
-      "content": "I decided to try something completely different - I mixed passion fruit with oolong tea and added coconut jelly. Everyone thought I was crazy, but it turned out to be the most refreshing drink I've ever created! Sometimes the weirdest combinations are the best ones.",
-      "recipe": "Oolong Tea + Passion Fruit + Coconut Jelly + 50% Sweetness"
+      "content": "Mixed passion fruit with oolong tea and coconut jelly. Everyone thought I was crazy, but it became the most refreshing drink ever created.",
+      "recipe": "Oolong Tea + Passion Fruit + Coconut Jelly + 50% Sweetness",
+      "backTitle": "Breaking the Rules",
+      "backContent": [
+        "I believe the best discoveries come from breaking conventional rules. Friends looked at me like I had three heads!",
+        "Inspiration came from a tropical vacation where I experienced perfect harmony of tea and fruit flavors."
+      ]
     },
     {
       "author": "Artist Sarah",
-      "date": "December 10, 2024",
+      "date": "April March 2025",
       "title": "Creating Art with Bubble Tea",
-      "content": "I love how this game lets me express my creativity! I created a rainbow layered drink using different colored syrups and toppings. It looked so beautiful that I couldn't bring myself to drink it at first. The visual aspect of bubble tea is just as important as the taste!",
-      "recipe": "Layered: Strawberry + Mango + Blue Raspberry + Popping Boba"
+      "content": "Created a rainbow layered drink using different colored syrups and toppings. The visual aspect of bubble tea is just as important as the taste!",
+      "recipe": "Layered: Strawberry + Mango + Blue Raspberry + Popping Boba",
+      "backTitle": "The Art of Layering",
+      "backContent": [
+        "As an artist, I see bubble tea as a canvas. Each layer represents different emotions - strawberry for passion, mango for joy.",
+        "The technique requires patience and precision. I pour each layer slowly, allowing it to settle before adding the next."
+      ]
     },
     {
       "author": "Business Owner David",
-      "date": "December 8, 2024",
+      "date": "April March 2025",
       "title": "From Game to Reality",
-      "content": "This game inspired me to open my own bubble tea shop! I learned so much about flavor combinations and customer preferences. The game's realistic mixing mechanics helped me understand the actual process. Now I'm serving my own creations to happy customers every day!",
-      "recipe": "Black Tea + Brown Sugar + Tapioca Pearls + 70% Sweetness"
+      "content": "This game inspired me to open my own bubble tea shop! Learned about flavor combinations and now serving my creations to happy customers.",
+      "recipe": "Black Tea + Brown Sugar + Tapioca Pearls + 70% Sweetness",
+      "backTitle": "The Entrepreneur's Dream",
+      "backContent": [
+        "Playing this game was the catalyst that changed my life. I spent countless hours experimenting with different combinations.",
+        "The game's realistic mechanics taught me about proper tea brewing and quality ingredients. Now my shop is thriving."
+      ]
+    },
+    {
+      "author": "Student Emma",
+      "date": "April March 2025",
+      "title": "Study Break Discoveries",
+      "content": "Found the perfect bubble tea combination for late-night study sessions. Green tea with honey and mint keeps me energized and focused.",
+      "recipe": "Green Tea + Honey + Mint Syrup + Tapioca Pearls + 40% Sweetness",
+      "backTitle": "Academic Success Formula",
+      "backContent": [
+        "As a medical student, I needed healthy ways to stay alert. Traditional energy drinks were too harsh, coffee made me jittery.",
+        "This combination provides perfect balance of caffeine, natural sweetness, and refreshing mint kick."
+      ]
+    },
+    {
+      "author": "Traveler Mike",
+      "date": "April March 2025",
+      "title": "Global Bubble Tea Adventures",
+      "content": "Traveled to over 20 countries and tried bubble tea everywhere. Each culture has its own unique twist on this beloved drink.",
+      "recipe": "Traditional Black Tea + Brown Sugar Syrup + Fresh Tapioca + 60% Sweetness",
+      "backTitle": "Around the World in Bubble Tea",
+      "backContent": [
+        "My journey began in Taiwan, the birthplace of bubble tea. I learned from local tea masters about traditional preparation methods.",
+        "In Japan, I discovered matcha bubble tea, while in Thailand I learned about coconut-based variations."
+      ]
     }
   ]
 }

@@ -1,39 +1,105 @@
 {
   "updates": [
     {
-      "date": "December 15, 2024",
+      "date": "April March 2025",
       "type": "New Flavor",
       "title": "Winter Spice Collection",
-      "description": "Introducing our new winter-themed flavors perfect for the holiday season! Warm up with cinnamon, nutmeg, and ginger-infused bubble tea combinations.",
+      "description": "New winter-themed flavors with cinnamon, nutmeg, and ginger combinations.",
       "features": [
         "Cinnamon Spice Black Tea",
         "Gingerbread Latte Blend",
         "Nutmeg Vanilla Cream",
         "Holiday-themed cup designs"
+      ],
+      "backTitle": "Winter Spice Details",
+      "backContent": [
+        "Our Winter Spice Collection brings holiday warmth to your bubble tea experience with premium spices from around the world.",
+        "Traditional winter spices combined with modern bubble tea techniques create a nostalgic yet innovative drinking experience."
       ]
     },
     {
-      "date": "December 10, 2024",
+      "date": "April March 2025",
       "type": "Game Update",
       "title": "Enhanced Mixing Mechanics",
-      "description": "We've improved the mixing system to make it more realistic and satisfying. Now you can see the ingredients blend together in real-time with improved physics.",
+      "description": "Improved mixing system with realistic physics and real-time blending.",
       "features": [
         "Realistic liquid physics",
         "Improved ingredient mixing animations",
         "Sound effects for mixing",
         "Haptic feedback on mobile devices"
+      ],
+      "backTitle": "Technical Improvements",
+      "backContent": [
+        "Advanced fluid dynamics algorithms create realistic liquid behavior as ingredients swirl and blend naturally.",
+        "Adaptive difficulty scaling adjusts mixing complexity based on skill level for both beginners and experts."
       ]
     },
     {
-      "date": "December 5, 2024",
+      "date": "April March 2025",
       "type": "Bug Fix",
       "title": "Performance Improvements",
-      "description": "Fixed several performance issues and improved loading times across all devices. The game now runs smoother than ever!",
+      "description": "Fixed performance issues and improved loading times across all devices.",
       "features": [
         "Reduced loading times by 40%",
         "Fixed memory leaks on mobile devices",
         "Improved frame rate consistency",
         "Better battery optimization"
+      ],
+      "backTitle": "Performance Details",
+      "backContent": [
+        "Advanced optimization techniques including lazy loading and GPU acceleration ensure smooth performance across all devices.",
+        "40% reduction in loading times achieved through intelligent asset compression and optimized rendering pipelines."
+      ]
+    },
+    {
+      "date": "April March 2025",
+      "type": "New Flavor",
+      "title": "Tropical Paradise Series",
+      "description": "Exotic fruit-inspired bubble tea collection with tropical flavors.",
+      "features": [
+        "Mango Passion Fruit Delight",
+        "Pineapple Coconut Dream",
+        "Guava Lychee Fusion",
+        "Tropical fruit boba pearls"
+      ],
+      "backTitle": "Tropical Paradise Info",
+      "backContent": [
+        "Authentic tropical fruits sourced directly from native regions capture the essence of sun-ripened fruits at peak freshness.",
+        "Tropical boba pearls made with real fruit purees create a burst of authentic flavor with every chew."
+      ]
+    },
+    {
+      "date": "April March 2025",
+      "type": "Feature Update",
+      "title": "Social Sharing Integration",
+      "description": "Share your bubble tea creations with friends and discover community recipes.",
+      "features": [
+        "Recipe sharing on social media",
+        "Community recipe gallery",
+        "Like and comment system",
+        "Personal recipe collection"
+      ],
+      "backTitle": "Social Features Guide",
+      "backContent": [
+        "Connect with bubble tea enthusiasts worldwide to share creations and discover trending recipes.",
+        "Community gallery showcases creative recipes with real-time updates and trending indicators."
+      ]
+    },
+    {
+      "date": "April March 2025",
+      "type": "New Flavor",
+      "title": "Midnight Chocolate Collection",
+      "description": "Rich chocolate flavors with premium cocoa and unique combinations.",
+      "features": [
+        "Dark Chocolate Truffle",
+        "White Chocolate Raspberry",
+        "Mint Chocolate Chip",
+        "Chocolate-covered boba pearls"
+      ],
+      "backTitle": "Chocolate Collection Details",
+      "backContent": [
+        "Single-origin cocoa beans from premium regions deliver perfect balance of richness and sweetness.",
+        "Chocolate-covered boba pearls hand-dipped in premium chocolate with various cocoa percentages."
       ]
     }
   ]
