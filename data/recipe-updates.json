@@ -1,0 +1,40 @@
+{
+  "updates": [
+    {
+      "date": "December 15, 2024",
+      "type": "New Flavor",
+      "title": "Winter Spice Collection",
+      "description": "Introducing our new winter-themed flavors perfect for the holiday season! Warm up with cinnamon, nutmeg, and ginger-infused bubble tea combinations.",
+      "features": [
+        "Cinnamon Spice Black Tea",
+        "Gingerbread Latte Blend",
+        "Nutmeg Vanilla Cream",
+        "Holiday-themed cup designs"
+      ]
+    },
+    {
+      "date": "December 10, 2024",
+      "type": "Game Update",
+      "title": "Enhanced Mixing Mechanics",
+      "description": "We've improved the mixing system to make it more realistic and satisfying. Now you can see the ingredients blend together in real-time with improved physics.",
+      "features": [
+        "Realistic liquid physics",
+        "Improved ingredient mixing animations",
+        "Sound effects for mixing",
+        "Haptic feedback on mobile devices"
+      ]
+    },
+    {
+      "date": "December 5, 2024",
+      "type": "Bug Fix",
+      "title": "Performance Improvements",
+      "description": "Fixed several performance issues and improved loading times across all devices. The game now runs smoother than ever!",
+      "features": [
+        "Reduced loading times by 40%",
+        "Fixed memory leaks on mobile devices",
+        "Improved frame rate consistency",
+        "Better battery optimization"
+      ]
+    }
+  ]
+}

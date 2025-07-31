@@ -1,0 +1,32 @@
+{
+  "contact": [
+    {
+      "icon": "📧",
+      "title": "Email",
+      "details": "Get in touch with us via email for general inquiries, support, or feedback.",
+      "link": "mailto:hello@entertainmentmove.com",
+      "linkText": "hello@entertainmentmove.com"
+    },
+    {
+      "icon": "📞",
+      "title": "Phone",
+      "details": "Call us during business hours for immediate assistance or technical support.",
+      "link": "tel:+61222007883",
+      "linkText": "+61 2 2200 7883"
+    },
+    {
+      "icon": "📍",
+      "title": "Location",
+      "details": "Our development studio is located at 17 Ocean Street, Tweed Heads NSW 2485, Australia. Come visit us!",
+      "link": "",
+      "linkText": "17 Ocean Street, Tweed Heads NSW 2485, Australia"
+    },
+    {
+      "icon": "🕒",
+      "title": "Business Hours",
+      "details": "Monday - Friday: 9:00 AM - 6:00 PM (AEST)\nSaturday: 10:00 AM - 4:00 PM (AEST)\nSunday: Closed",
+      "link": "",
+      "linkText": ""
+    }
+  ]
+}

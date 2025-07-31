@@ -1,0 +1,2044 @@
+/* Bubble Tea Mixing Game - Main Styles */
+:root {
+  /* Tea-inspired color palette */
+  --matcha-green: #7fb069;
+  --milk-froth: #f8f9fa;
+  --bubble-energy: #ff6b6b;
+  --tapioca-brown: #8b4513;
+  --lychee-pink: #ffb6c1;
+  --mango-yellow: #ffd700;
+  --strawberry-red: #ff4444;
+  --oolong-amber: #d4a574;
+  --herbal-mint: #98fb98;
+  --boba-black: #2c2c2c;
+  --cup-clear: rgba(255, 255, 255, 0.9);
+  --shadow-soft: rgba(0, 0, 0, 0.1);
+  --shadow-deep: rgba(0, 0, 0, 0.2);
+
+  /* Additional color variables for transparency */
+  --white-transparent-15: rgba(255, 255, 255, 0.15);
+  --white-transparent-20: rgba(255, 255, 255, 0.2);
+  --white-transparent-25: rgba(255, 255, 255, 0.25);
+  --white-transparent-30: rgba(255, 255, 255, 0.3);
+  --white-transparent-50: rgba(255, 255, 255, 0.5);
+  --white-transparent-70: rgba(255, 255, 255, 0.7);
+  --white-transparent-80: rgba(255, 255, 255, 0.8);
+  --white-transparent-90: rgba(255, 255, 255, 0.9);
+  --white-transparent-95: rgba(255, 255, 255, 0.95);
+  --black-transparent-10: rgba(0, 0, 0, 0.1);
+  --black-transparent-20: rgba(0, 0, 0, 0.2);
+  --black-transparent-30: rgba(0, 0, 0, 0.3);
+  --black-transparent-40: rgba(0, 0, 0, 0.4);
+  --black-transparent-70: rgba(0, 0, 0, 0.7);
+  --matcha-green-transparent-10: rgba(127, 176, 105, 0.1);
+
+  /* Typography */
+  --font-brew-primary: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --font-brew-secondary: "Georgia", "Times", serif;
+
+  /* Spacing */
+  --bubble-spacing-xs: 0.5rem;
+  --bubble-spacing-sm: 1rem;
+  --bubble-spacing-md: 1.5rem;
+  --bubble-spacing-lg: 2rem;
+  --bubble-spacing-xl: 3rem;
+
+  /* Border radius */
+  --bubble-radius-sm: 8px;
+  --bubble-radius-md: 16px;
+  --bubble-radius-lg: 24px;
+  --bubble-radius-xl: 32px;
+
+  /* Transitions */
+  --bubble-transition: all 0.3s ease;
+  --bubble-transition-slow: all 0.5s ease;
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-brew-primary);
+  line-height: 1.6;
+  color: var(--boba-black);
+  background: linear-gradient(
+    135deg,
+    var(--milk-froth) 0%,
+    var(--herbal-mint) 100%
+  );
+  min-height: 100vh;
+}
+
+/* Container utilities */
+.brew-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--bubble-spacing-sm);
+}
+
+/* Header styles */
+.teahead-header {
+  background: var(--cup-clear);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px var(--shadow-soft);
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+}
+
+.header-brew-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--bubble-spacing-sm) var(--bubble-spacing-sm);
+}
+
+.teahead-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--matcha-green);
+  text-decoration: none;
+  transition: var(--bubble-transition);
+  text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+.teahead-logo:hover {
+  color: var(--bubble-energy);
+  transform: scale(1.05);
+}
+
+.teahead-nav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: calc(100vh - 80px);
+  background: var(--cup-clear);
+  box-shadow: 0 4px 20px var(--shadow-soft);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .teahead-nav {
+    display: flex;
+    position: static;
+    background: transparent;
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+    box-shadow: none;
+  }
+}
+
+.teahead-nav.active {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.teahead-nav-list {
+  list-style: none;
+  padding: var(--bubble-spacing-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: var(--bubble-spacing-xl);
+  height: 100%;
+}
+
+.teahead-nav-item {
+  margin: var(--bubble-spacing-md) 0;
+  width: 100%;
+  text-align: center;
+}
+
+.teahead-nav-link {
+  display: block;
+  padding: var(--bubble-spacing-md) var(--bubble-spacing-lg);
+  color: var(--boba-black);
+  text-decoration: none;
+  border-radius: var(--bubble-radius-md);
+  transition: var(--bubble-transition);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.teahead-nav-link:hover {
+  background: var(--matcha-green);
+  color: white;
+  transform: scale(1.05);
+}
+
+.burger-bubble-menu {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding: var(--bubble-spacing-xs);
+}
+
+.burger-bubble-line {
+  width: 25px;
+  height: 3px;
+  background: var(--matcha-green);
+  margin: 2px 0;
+  transition: var(--bubble-transition);
+  border-radius: 2px;
+}
+
+.burger-bubble-menu.active .burger-bubble-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-bubble-menu.active .burger-bubble-line:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-bubble-menu.active .burger-bubble-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Main content */
+.brew-main {
+  flex: 1;
+}
+
+/* Hero section */
+.tea-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--lychee-pink) 0%,
+    var(--mango-yellow) 50%,
+    var(--strawberry-red) 100%
+  );
+  position: relative;
+  overflow: hidden;
+  padding: var(--bubble-spacing-xl) var(--bubble-spacing-sm);
+}
+
+.tea-hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  gap: var(--bubble-spacing-xl);
+}
+
+.tea-hero-content {
+  text-align: center;
+}
+
+.tea-hero-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: var(--bubble-spacing-md);
+  text-shadow: 2px 2px 4px var(--shadow-deep);
+}
+
+.tea-hero-slogan {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: var(--bubble-spacing-lg);
+  text-shadow: 1px 1px 2px var(--shadow-deep);
+}
+
+.tea-hero-card {
+  width: 100%;
+  max-width: 500px;
+  background: var(--white-transparent-15);
+  border-radius: var(--bubble-radius-lg);
+  overflow: hidden;
+  box-shadow: 0 8px 32px var(--shadow-deep);
+  position: relative;
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--white-transparent-20);
+}
+
+.tea-card-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../assets/tea-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.tea-card-content {
+  position: relative;
+  z-index: 2;
+  padding: var(--bubble-spacing-xl);
+  background: linear-gradient(
+    135deg,
+    var(--white-transparent-25) 0%,
+    var(--white-transparent-15) 50%,
+    var(--white-transparent-10) 100%
+  );
+  backdrop-filter: blur(10px);
+}
+
+.tea-card-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: white;
+  margin-bottom: var(--bubble-spacing-md);
+  text-align: left;
+  text-shadow: 1px 1px 2px var(--black-transparent-30);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.tea-card-text:last-child {
+  margin-bottom: 0;
+}
+
+.tea-hero-action {
+  margin-top: var(--bubble-spacing-lg);
+  text-align: center;
+}
+
+.tea-mix-btn {
+  background: var(--bubble-energy);
+  color: white;
+  border: none;
+  padding: var(--bubble-spacing-md) var(--bubble-spacing-lg);
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: var(--bubble-radius-lg);
+  cursor: pointer;
+  transition: var(--bubble-transition);
+  box-shadow: 0 4px 15px var(--shadow-deep);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.tea-mix-btn:hover {
+  background: var(--strawberry-red);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--shadow-deep);
+}
+
+/* Section styles */
+.tea-bar-features,
+.how-to-mix,
+.customer-feedback,
+.flavors-toppings,
+.customization-upgrades {
+  padding: var(--bubble-spacing-xl) 0;
+}
+
+.features-brew-container,
+.mix-brew-container,
+.feedback-brew-container,
+.flavors-brew-container,
+.upgrades-brew-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--bubble-spacing-sm);
+}
+
+.features-bubble-title,
+.mix-bubble-title,
+.feedback-bubble-title,
+.flavors-bubble-title,
+.upgrades-bubble-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--boba-black);
+
+  margin-bottom: var(--bubble-spacing-xl);
+}
+
+/* Features grid */
+.features-bubble-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bubble-spacing-md);
+}
+
+.feature-bubble-card {
+  background: linear-gradient(
+    135deg,
+    var(--lychee-pink) 0%,
+    var(--mango-yellow) 50%,
+    var(--strawberry-red) 100%
+  );
+  padding: var(--bubble-spacing-md);
+  border-radius: var(--bubble-radius-md);
+  text-align: center;
+  box-shadow: 0 4px 20px var(--shadow-soft);
+  transition: var(--bubble-transition);
+  color: white;
+}
+
+.feature-bubble-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px var(--shadow-deep);
+}
+
+.feature-bubble-icon {
+  font-size: 2rem;
+  margin-bottom: var(--bubble-spacing-sm);
+}
+
+.feature-bubble-card h3 {
+  color: white;
+  margin-bottom: var(--bubble-spacing-xs);
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 2px var(--shadow-deep);
+}
+
+.feature-bubble-card p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-shadow: 1px 1px 2px var(--shadow-deep);
+}
+
+.features-bubble-content {
+  text-align: left;
+}
+
+.features-bubble-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--boba-black);
+  margin-bottom: var(--bubble-spacing-md);
+}
+
+.features-bubble-text:last-child {
+  margin-bottom: 0;
+}
+
+/* Flavors section */
+.flavors-bubble-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bubble-spacing-xl);
+}
+
+.flavors-bubble-content {
+  text-align: center;
+}
+
+.flavors-bubble-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--boba-black);
+  margin-bottom: var(--bubble-spacing-md);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flavors-bubble-text:last-child {
+  margin-bottom: 0;
+}
+
+.flavors-bubble-card {
+  background: linear-gradient(
+    135deg,
+    var(--lychee-pink) 0%,
+    var(--mango-yellow) 50%,
+    var(--strawberry-red) 100%
+  );
+  padding: var(--bubble-spacing-xl);
+  border-radius: var(--bubble-radius-lg);
+  box-shadow: 0 8px 32px var(--shadow-deep);
+  max-width: 800px;
+  position: relative;
+  overflow: hidden;
+}
+
+.flavor-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--bubble-spacing-sm);
+}
+
+.flavor-item {
+  background: var(--white-transparent-20);
+  color: white;
+  padding: var(--bubble-spacing-xs) var(--bubble-spacing-sm);
+  border-radius: var(--bubble-radius-md);
+  font-size: 0.9rem;
+  transition: var(--bubble-transition);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--white-transparent-30);
+  text-shadow: 1px 1px 2px var(--black-transparent-30);
+}
+
+.flavor-item:hover {
+  background: var(--white-transparent-30);
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px var(--black-transparent-20);
+}
+
+/* Upgrades section */
+.upgrades-bubble-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bubble-spacing-lg);
+  width: 100%;
+}
+
+.upgrade-bubble-card {
+  background: linear-gradient(
+      135deg,
+      var(--white-transparent-80) 0%,
+      var(--white-transparent-80) 50%,
+      var(--white-transparent-80) 100%
+    ),
+    url("../assets/tea-section.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: var(--bubble-spacing-lg);
+  border-radius: var(--bubble-radius-lg);
+  text-align: center;
+  box-shadow: 0 4px 20px var(--shadow-soft);
+  transition: var(--bubble-transition);
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.upgrade-bubble-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px var(--shadow-deep);
+}
+
+.upgrade-bubble-icon {
+  font-size: 3rem;
+  margin-bottom: var(--bubble-spacing-md);
+}
+
+.upgrade-bubble-card h3 {
+  color: var(--matcha-green);
+  margin-bottom: var(--bubble-spacing-sm);
+  font-size: 1.3rem;
+  text-shadow: 1px 1px 2px var(--black-transparent-30);
+}
+
+.upgrade-bubble-card p {
+  color: var(--boba-black);
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px var(--white-transparent-80);
+}
+
+/* Footer */
+.tapioca-footer {
+  background: var(--boba-black);
+  color: white;
+  padding-top: var(--bubble-spacing-xl);
+  margin-top: auto;
+}
+
+.footer-brew-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--bubble-spacing-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--bubble-spacing-lg);
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.footer-bubble-section {
+  text-align: left;
+}
+
+.footer-bubble-section h3 {
+  color: var(--matcha-green);
+  margin-bottom: var(--bubble-spacing-md);
+}
+
+.footer-bubble-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--bubble-spacing-xs);
+}
+
+.footer-bubble-link {
+  color: white;
+  text-decoration: none;
+  transition: var(--bubble-transition);
+}
+
+.footer-bubble-link:hover {
+  color: var(--matcha-green);
+}
+
+.footer-bubble-copyright {
+  text-align: center;
+  padding: var(--bubble-spacing-sm) 0;
+  color: var(--milk-froth);
+  font-size: 13px;
+
+  @media (min-width: 768px) {
+    font-size: 15px;
+  }
+}
+
+/* News page styles */
+/* Recipe Updates Hero Section */
+.recipe-updates-hero {
+  padding: var(--bubble-spacing-xl) var(--bubble-spacing-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    var(--milk-froth) 0%,
+    var(--herbal-mint) 100%
+  );
+}
+
+.recipe-updates-container {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  background: var(--white-transparent-95);
+  border-radius: var(--bubble-radius-xl);
+  padding: var(--bubble-spacing-sm);
+  box-shadow: 0 20px 60px var(--shadow-deep);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--white-transparent-30);
+  overflow: hidden;
+}
+
+.recipe-updates-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../assets/tea-section.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.recipe-updates-title {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--matcha-green);
+  margin-bottom: var(--bubble-spacing-sm);
+  text-shadow: 2px 2px 4px var(--shadow-soft);
+}
+
+.recipe-updates-subtitle {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--boba-black);
+  margin-bottom: var(--bubble-spacing-xl);
+  opacity: 0.8;
+}
+
+.recipe-updates-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: var(--bubble-spacing-md);
+  grid-template-columns: 1fr;
+}
+
+/* Boba Stories Section */
+.boba-stories-hero {
+  padding: var(--bubble-spacing-xl) var(--bubble-spacing-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    var(--milk-froth) 0%,
+    var(--herbal-mint) 100%
+  );
+}
+
+.boba-stories-container {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  background: var(--white-transparent-95);
+  border-radius: var(--bubble-radius-xl);
+  padding: var(--bubble-spacing-sm);
+  box-shadow: 0 20px 60px var(--shadow-deep);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--white-transparent-30);
+  overflow: hidden;
+}
+
+.boba-stories-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../assets/tea-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.boba-stories-title {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--matcha-green);
+  margin-bottom: var(--bubble-spacing-sm);
+  text-shadow: 2px 2px 4px var(--shadow-soft);
+}
+
+.boba-stories-subtitle {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--boba-black);
+  margin-bottom: var(--bubble-spacing-xl);
+  opacity: 0.8;
+}
+
+.boba-stories-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: var(--bubble-spacing-lg);
+  grid-template-columns: 1fr;
+}
+
+/* Compact Recipe Update Cards */
+.update-bubble-card {
+  background: var(--white-transparent-90);
+  padding: var(--bubble-spacing-md);
+  border-radius: var(--bubble-radius-md);
+  box-shadow: 0 4px 15px var(--shadow-soft);
+  transition: var(--bubble-transition);
+  border: 1px solid var(--white-transparent-50);
+  backdrop-filter: blur(10px);
+}
+
+.update-bubble-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px var(--shadow-deep);
+  background: var(--white-transparent-95);
+}
+
+.story-bubble-card {
+  background: var(--cup-clear);
+  padding: var(--bubble-spacing-lg);
+  border-radius: var(--bubble-radius-lg);
+  box-shadow: 0 4px 20px var(--shadow-soft);
+  transition: var(--bubble-transition);
+}
+
+.story-bubble-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px var(--shadow-deep);
+}
+
+.update-bubble-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--bubble-spacing-sm);
+  flex-wrap: wrap;
+  gap: var(--bubble-spacing-xs);
+}
+
+.update-bubble-date,
+.story-bubble-date {
+  color: var(--tapioca-brown);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.update-bubble-type {
+  background: var(--matcha-green);
+  color: white;
+  padding: var(--bubble-spacing-xs) var(--bubble-spacing-sm);
+  border-radius: var(--bubble-radius-sm);
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.update-bubble-title {
+  color: var(--matcha-green);
+  margin-bottom: var(--bubble-spacing-xs);
+  font-size: 1.1rem;
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+.story-bubble-title {
+  color: var(--matcha-green);
+  margin-bottom: var(--bubble-spacing-sm);
+  font-size: 1.3rem;
+}
+
+.update-bubble-description {
+  color: var(--boba-black);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: var(--bubble-spacing-sm);
+  opacity: 0.9;
+}
+
+.update-bubble-features {
+  margin-top: var(--bubble-spacing-sm);
+  padding-top: var(--bubble-spacing-sm);
+  border-top: 1px solid var(--black-transparent-10);
+}
+
+.update-bubble-features h4 {
+  color: var(--boba-black);
+  margin-bottom: var(--bubble-spacing-xs);
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.update-bubble-features ul {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--bubble-spacing-xs);
+}
+
+.update-bubble-features li {
+  padding: var(--bubble-spacing-xs) 0;
+  position: relative;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.update-bubble-features li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  font-size: 0.8rem;
+}
+
+.story-bubble-card {
+  background: var(--white-transparent-90);
+  padding: var(--bubble-spacing-md);
+  border-radius: var(--bubble-radius-md);
+  box-shadow: 0 4px 15px var(--shadow-soft);
+  transition: var(--bubble-transition);
+  border: 1px solid var(--white-transparent-50);
+  backdrop-filter: blur(10px);
+  display: flex;
+  gap: var(--bubble-spacing-md);
+}
+
+.story-bubble-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px var(--shadow-deep);
+  background: var(--white-transparent-95);
+}
+
+.story-bubble-avatar {
+  flex-shrink: 0;
+}
+
+.avatar-bubble {
+  width: 50px;
+  height: 50px;
+  background: var(--lychee-pink);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 2px 8px var(--shadow-soft);
+}
+
+.story-bubble-content {
+  flex: 1;
+}
+
+.story-bubble-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--bubble-spacing-sm);
+  flex-wrap: wrap;
+  gap: var(--bubble-spacing-xs);
+}
+
+.story-bubble-author {
+  font-size: 0.85rem;
+  color: var(--tapioca-brown);
+  font-weight: 500;
+}
+
+.story-bubble-date {
+  font-size: 0.8rem;
+  color: var(--tapioca-brown);
+  opacity: 0.8;
+}
+
+.story-bubble-title {
+  color: var(--matcha-green);
+  margin-bottom: var(--bubble-spacing-xs);
+  font-size: 1.1rem;
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+.story-bubble-content p {
+  color: var(--boba-black);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: var(--bubble-spacing-sm);
+  opacity: 0.9;
+}
+
+.story-bubble-recipe {
+  margin-top: var(--bubble-spacing-sm);
+  padding: var(--bubble-spacing-sm);
+  background: var(--milk-froth);
+  border-radius: var(--bubble-radius-sm);
+  border-left: 4px solid var(--matcha-green);
+}
+
+.story-bubble-recipe h4 {
+  color: var(--matcha-green);
+  margin-bottom: var(--bubble-spacing-xs);
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.story-bubble-recipe p {
+  font-size: 0.8rem;
+  color: var(--boba-black);
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* Contact page styles */
+.contact-info,
+.map-section,
+.contact-form {
+  padding: var(--bubble-spacing-xl) 0;
+}
+
+/* Mobile-first contact card styles */
+@media (max-width: 767px) {
+  .contact-bubble-grid {
+    gap: var(--bubble-spacing-sm);
+    max-width: 100%;
+  }
+
+  .contact-bubble-card {
+    min-height: 70px;
+    padding: var(--bubble-spacing-sm);
+  }
+
+  .contact-bubble-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .contact-bubble-content h3 {
+    font-size: 1rem;
+    margin-bottom: var(--bubble-spacing-xs);
+  }
+
+  .contact-bubble-content p {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+
+  .contact-bubble-link {
+    font-size: 0.9rem;
+  }
+}
+
+.contact-brew-container,
+.map-brew-container,
+.form-brew-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--bubble-spacing-sm);
+}
+
+.contact-bubble-title,
+.map-bubble-title,
+.form-bubble-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--boba-black);
+  margin-bottom: var(--bubble-spacing-xl);
+}
+
+.contact-bubble-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--bubble-spacing-md);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-bubble-card {
+  background: var(--cup-clear);
+  padding: var(--bubble-spacing-md);
+  border-radius: var(--bubble-radius-lg);
+  box-shadow: 0 4px 20px var(--shadow-soft);
+  display: flex;
+  align-items: center;
+  gap: var(--bubble-spacing-sm);
+  transition: var(--bubble-transition);
+  min-height: 80px;
+}
+
+.contact-bubble-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px var(--shadow-deep);
+}
+
+.contact-bubble-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--bubble-energy),
+    var(--strawberry-red)
+  );
+  border-radius: var(--bubble-radius-md);
+  color: white;
+}
+
+.contact-bubble-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.contact-bubble-content h3 {
+  color: var(--matcha-green);
+  margin-bottom: var(--bubble-spacing-xs);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.contact-bubble-content p {
+  font-size: 0.9rem;
+  color: var(--boba-black);
+  opacity: 0.8;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.contact-bubble-link {
+  color: var(--bubble-energy);
+  text-decoration: none;
+  font-weight: bold;
+  transition: var(--bubble-transition);
+  display: inline-block;
+  margin-top: var(--bubble-spacing-xs);
+}
+
+.contact-bubble-link:hover {
+  color: var(--strawberry-red);
+  transform: translateX(3px);
+}
+
+.map-bubble-container {
+  border-radius: var(--bubble-radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 20px var(--shadow-soft);
+}
+
+.bubble-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--cup-clear);
+  padding: var(--bubble-spacing-xl);
+  border-radius: var(--bubble-radius-lg);
+  box-shadow: 0 4px 20px var(--shadow-soft);
+}
+
+.form-bubble-group {
+  margin-bottom: var(--bubble-spacing-lg);
+}
+
+.form-bubble-label {
+  display: block;
+  color: var(--boba-black);
+  font-weight: bold;
+  margin-bottom: var(--bubble-spacing-xs);
+}
+
+.form-bubble-input,
+.form-bubble-textarea {
+  width: 100%;
+  padding: var(--bubble-spacing-sm);
+  border: 2px solid var(--shadow-soft);
+  border-radius: var(--bubble-radius-sm);
+  font-family: var(--font-brew-primary);
+  font-size: 1rem;
+  transition: var(--bubble-transition);
+}
+
+.form-bubble-textarea {
+  resize: none;
+}
+
+.form-bubble-input:focus,
+.form-bubble-textarea:focus {
+  outline: none;
+  border-color: var(--matcha-green);
+  box-shadow: 0 0 0 3px var(--matcha-green-transparent-10);
+}
+
+.form-bubble-submit {
+  background: var(--bubble-energy);
+  color: white;
+  border: none;
+  padding: var(--bubble-spacing-md) var(--bubble-spacing-lg);
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: var(--bubble-radius-lg);
+  cursor: pointer;
+  transition: var(--bubble-transition);
+  width: 100%;
+}
+
+.form-bubble-submit:hover {
+  background: var(--strawberry-red);
+  transform: translateY(-2px);
+}
+
+.form-bubble-submit:disabled {
+  background: var(--tapioca-brown);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Message styles */
+.bubble-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: var(--bubble-spacing-md);
+  border-radius: var(--bubble-radius-md);
+  color: white;
+  font-weight: bold;
+  z-index: 10000;
+  transition: all 0.3s ease;
+}
+
+.bubble-message-success {
+  background: var(--matcha-green);
+}
+
+.bubble-message-error {
+  background: var(--strawberry-red);
+}
+
+/* Overlay and spinner styles */
+.bubble-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--black-transparent-70);
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.bubble-spinner {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px var(--black-transparent-30);
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.spinner-ring {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--milk-froth);
+  border-top: 4px solid var(--matcha-green);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner-text {
+  color: var(--boba-black);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.bubble-notification {
+  background: var(--matcha-green);
+  color: white;
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px var(--black-transparent-30);
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+/* Mix instructions styles */
+.mix-bubble-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--bubble-spacing-lg);
+}
+
+@media (min-width: 768px) {
+  .mix-bubble-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .mix-bubble-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--bubble-spacing-xl);
+  }
+}
+
+.mix-bubble-step {
+  background: linear-gradient(
+    135deg,
+    var(--lychee-pink) 0%,
+    var(--mango-yellow) 50%,
+    var(--strawberry-red) 100%
+  );
+  padding: var(--bubble-spacing-xl);
+  border-radius: var(--bubble-radius-lg);
+  box-shadow: 0 8px 32px var(--shadow-deep);
+  transition: var(--bubble-transition);
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.mix-bubble-step::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--white-transparent-10);
+  backdrop-filter: blur(5px);
+  z-index: 1;
+}
+
+.mix-bubble-step:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 40px var(--shadow-deep);
+}
+
+.step-bubble-number {
+  width: 60px;
+  height: 60px;
+  background: var(--white-transparent-20);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  border: 3px solid var(--white-transparent-30);
+  position: relative;
+  z-index: 2;
+}
+
+.step-bubble-content {
+  position: relative;
+  z-index: 2;
+}
+
+.step-bubble-content h4 {
+  color: white;
+  margin-bottom: var(--bubble-spacing-md);
+  font-size: 1.4rem;
+  text-shadow: 1px 1px 2px var(--shadow-deep);
+  font-weight: 600;
+}
+
+.step-bubble-content p {
+  color: white;
+  line-height: 1.7;
+  margin-bottom: var(--bubble-spacing-md);
+  text-shadow: 1px 1px 2px var(--black-transparent-30);
+  font-size: 1.1rem;
+}
+
+.step-bubble-tips {
+  margin-top: var(--bubble-spacing-md);
+  padding: var(--bubble-spacing-md);
+  background: var(--white-transparent-15);
+  border-radius: var(--bubble-radius-md);
+  border-left: 4px solid var(--white-transparent-50);
+  font-size: 0.95rem;
+  color: white;
+  text-shadow: 1px 1px 2px var(--black-transparent-30);
+  backdrop-filter: blur(10px);
+}
+
+/* Feedback styles */
+.feedback-bubble-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--bubble-spacing-lg);
+}
+
+@media (min-width: 768px) {
+  .feedback-bubble-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .feedback-bubble-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--bubble-spacing-xl);
+  }
+}
+
+.feedback-bubble-card {
+  background: var(--white-transparent-25);
+  border-radius: var(--bubble-radius-lg);
+  overflow: hidden;
+  box-shadow: 0 8px 32px var(--shadow-deep);
+  position: relative;
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--white-transparent-30);
+  transition: var(--bubble-transition);
+  color: white;
+  padding: var(--bubble-spacing-md);
+}
+
+.feedback-bubble-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../assets/tea-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  z-index: 1;
+}
+
+.feedback-bubble-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 40px var(--shadow-deep);
+}
+
+.feedback-bubble-content {
+  position: relative;
+  z-index: 2;
+}
+
+.feedback-bubble-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: var(--bubble-spacing-md);
+  text-shadow: 2px 2px 4px var(--black-transparent-70);
+  font-style: italic;
+  text-align: center;
+  font-weight: 500;
+  background: var(--black-transparent-40);
+  padding: var(--bubble-spacing-md);
+  border-radius: var(--bubble-radius-md);
+  backdrop-filter: blur(5px);
+}
+
+.feedback-bubble-author {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--bubble-spacing-md);
+  padding-top: var(--bubble-spacing-md);
+  border-top: 1px solid var(--white-transparent-20);
+}
+
+.feedback-bubble-name {
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-shadow: 2px 2px 4px var(--black-transparent-70);
+}
+
+.feedback-bubble-rating {
+  color: var(--mango-yellow);
+  font-size: 1.2rem;
+  text-shadow: 2px 2px 4px var(--black-transparent-70);
+}
+
+/* Legal page styles */
+.legal-content {
+  padding: var(--bubble-spacing-xl) 0;
+}
+
+.legal-brew-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--bubble-spacing-sm);
+}
+
+.legal-bubble-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--boba-black);
+  margin-bottom: var(--bubble-spacing-xl);
+}
+
+.legal-bubble-content {
+  background: var(--cup-clear);
+  padding: var(--bubble-spacing-xl);
+  border-radius: var(--bubble-radius-lg);
+  box-shadow: 0 4px 20px var(--shadow-soft);
+  line-height: 1.8;
+}
+
+.legal-bubble-content h2 {
+  color: var(--matcha-green);
+  margin-top: var(--bubble-spacing-xl);
+  margin-bottom: var(--bubble-spacing-md);
+  font-size: 1.5rem;
+}
+
+.legal-bubble-content h3 {
+  color: var(--boba-black);
+  margin-top: var(--bubble-spacing-lg);
+  margin-bottom: var(--bubble-spacing-sm);
+  font-size: 1.2rem;
+}
+
+.legal-bubble-content p {
+  margin-bottom: var(--bubble-spacing-md);
+}
+
+.legal-bubble-content ul {
+  margin-bottom: var(--bubble-spacing-md);
+  padding-left: var(--bubble-spacing-lg);
+}
+
+.legal-bubble-content li {
+  margin-bottom: var(--bubble-spacing-xs);
+}
+
+.legal-bubble-content a {
+  color: var(--bubble-energy);
+  text-decoration: none;
+  font-weight: bold;
+  transition: var(--bubble-transition);
+}
+
+.legal-bubble-content a:hover {
+  color: var(--strawberry-red);
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+  .tea-hero-container {
+    flex-direction: row;
+    text-align: left;
+    gap: var(--bubble-spacing-xl);
+    align-items: center;
+  }
+
+  .tea-hero-content {
+    flex: 1;
+    text-align: left;
+  }
+
+  .tea-hero-card {
+    flex: 1;
+    max-width: 600px;
+  }
+
+  .tea-hero-title {
+    font-size: 3.5rem;
+  }
+
+  .features-brew-container {
+    display: flex;
+    flex-direction: row;
+    gap: var(--bubble-spacing-xl);
+    align-items: flex-start;
+  }
+
+  .features-bubble-grid {
+    flex: 1;
+    max-width: 400px;
+    flex-direction: column;
+    gap: var(--bubble-spacing-sm);
+  }
+
+  .feature-bubble-card {
+    padding: var(--bubble-spacing-sm);
+  }
+
+  .feature-bubble-card h3 {
+    font-size: 1rem;
+  }
+
+  .feature-bubble-card p {
+    font-size: 0.8rem;
+  }
+
+  .features-bubble-content {
+    flex: 1;
+  }
+
+  .flavors-bubble-layout {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--bubble-spacing-xl);
+  }
+
+  .flavors-bubble-content {
+    flex: 1;
+    text-align: left;
+    max-width: 500px;
+  }
+
+  .flavors-bubble-text {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .flavors-bubble-card {
+    flex: 1;
+    max-width: 600px;
+    margin: 0;
+  }
+
+  .recipe-updates-container {
+    padding: var(--bubble-spacing-sm);
+  }
+
+  .recipe-updates-title {
+    font-size: 3.5rem;
+  }
+
+  .recipe-updates-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .recipe-updates-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--bubble-spacing-lg);
+  }
+
+  .update-bubble-card {
+    padding: var(--bubble-spacing-lg);
+  }
+
+  .update-bubble-title {
+    font-size: 1.2rem;
+  }
+
+  .update-bubble-features ul {
+    grid-template-columns: 1fr;
+  }
+
+  .boba-stories-container {
+    padding: var(--bubble-spacing-sm);
+  }
+
+  .boba-stories-title {
+    font-size: 3.5rem;
+  }
+
+  .boba-stories-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .boba-stories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--bubble-spacing-lg);
+  }
+
+  .story-bubble-card {
+    padding: var(--bubble-spacing-lg);
+  }
+
+  .upgrades-bubble-grid,
+  .stories-bubble-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .upgrade-bubble-card,
+  .story-bubble-card {
+    flex: 1;
+    min-width: 300px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .contact-bubble-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--bubble-spacing-lg);
+    max-width: 1000px;
+  }
+
+  .contact-bubble-card {
+    min-height: 100px;
+    padding: var(--bubble-spacing-lg);
+  }
+
+  .contact-bubble-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2.2rem;
+  }
+
+  .contact-bubble-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .contact-bubble-content p {
+    font-size: 1rem;
+  }
+
+  .teahead-nav-list {
+    display: flex;
+    flex-direction: row;
+    gap: var(--bubble-spacing-sm);
+    padding: 0;
+    position: static;
+    background: transparent;
+    backdrop-filter: none;
+    box-shadow: none;
+    transform: none;
+    transition: none;
+  }
+
+  .teahead-nav-item {
+    margin: 0;
+    width: auto;
+    text-align: left;
+  }
+
+  .teahead-nav-link {
+    padding: var(--bubble-spacing-xs) var(--bubble-spacing-sm);
+    font-size: 1rem;
+    font-weight: normal;
+  }
+
+  .burger-bubble-menu {
+    display: none;
+  }
+
+  .footer-brew-container {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+
+  .footer-bubble-section {
+    text-align: left;
+  }
+}
+
+@media (min-width: 1024px) {
+  .recipe-updates-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--bubble-spacing-lg);
+  }
+
+  .update-bubble-features ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .boba-stories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--bubble-spacing-lg);
+  }
+
+  .contact-bubble-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--bubble-spacing-xl);
+    max-width: 1200px;
+  }
+
+  .contact-bubble-card {
+    min-height: 120px;
+    padding: var(--bubble-spacing-xl);
+  }
+
+  .contact-bubble-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2.5rem;
+  }
+
+  .contact-bubble-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .contact-bubble-content p {
+    font-size: 1.05rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .recipe-updates-container {
+    padding: var(--bubble-spacing-sm);
+  }
+
+  .recipe-updates-title {
+    font-size: 4rem;
+  }
+
+  .recipe-updates-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .boba-stories-container {
+    padding: var(--bubble-spacing-sm);
+  }
+
+  .boba-stories-title {
+    font-size: 4rem;
+  }
+
+  .boba-stories-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .contact-bubble-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--bubble-spacing-xl);
+    max-width: 1400px;
+  }
+
+  .contact-bubble-card {
+    min-height: 140px;
+    padding: var(--bubble-spacing-xl);
+  }
+
+  .contact-bubble-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 2.8rem;
+  }
+
+  .contact-bubble-content h3 {
+    font-size: 1.4rem;
+  }
+
+  .contact-bubble-content p {
+    font-size: 1.1rem;
+  }
+
+  .tea-hero-title {
+    font-size: 4rem;
+  }
+
+  .tea-hero-slogan {
+    font-size: 1.4rem;
+  }
+
+  .tea-mix-btn {
+    font-size: 1.2rem;
+    padding: var(--bubble-spacing-lg) var(--bubble-spacing-xl);
+  }
+
+  .features-bubble-title,
+  .flavors-bubble-title,
+  .upgrades-bubble-title,
+  .mix-bubble-title,
+  .feedback-bubble-title,
+  .contact-bubble-title,
+  .legal-bubble-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Cookie Consent Bar Styles */
+.cookie-consent {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--cup-clear);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 -4px 20px var(--shadow-soft);
+  z-index: 1000;
+  transform: translateY(100%);
+  transition: var(--bubble-transition-slow);
+  border-top: 2px solid var(--matcha-green);
+}
+
+.cookie-consent.show {
+  transform: translateY(0);
+}
+
+.cookie-consent-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--bubble-spacing-md) var(--bubble-spacing-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--bubble-spacing-md);
+}
+
+.cookie-consent-text {
+  display: flex;
+  align-items: center;
+  gap: var(--bubble-spacing-sm);
+  flex: 1;
+}
+
+.cookie-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.cookie-consent-text p {
+  margin: 0;
+  color: var(--boba-black);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.cookie-accept-btn {
+  background: linear-gradient(
+    135deg,
+    var(--matcha-green) 0%,
+    var(--bubble-energy) 100%
+  );
+  color: white;
+  border: none;
+  padding: var(--bubble-spacing-sm) var(--bubble-spacing-md);
+  border-radius: var(--bubble-radius-md);
+  font-family: var(--font-brew-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--bubble-transition);
+  box-shadow: 0 4px 15px var(--shadow-soft);
+  flex-shrink: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cookie-accept-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--shadow-deep);
+  background: linear-gradient(
+    135deg,
+    var(--bubble-energy) 0%,
+    var(--matcha-green) 100%
+  );
+}
+
+.cookie-accept-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px var(--shadow-soft);
+}
+
+/* Mobile responsive for cookie consent */
+@media (max-width: 768px) {
+  .cookie-consent-content {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--bubble-spacing-sm);
+  }
+
+  .cookie-consent-text {
+    flex-direction: column;
+    gap: var(--bubble-spacing-xs);
+  }
+
+  .cookie-consent-text p {
+    font-size: 0.9rem;
+  }
+
+  .cookie-accept-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cookie-consent-content {
+    padding: var(--bubble-spacing-sm);
+  }
+
+  .cookie-consent-text p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Game Section Styles */
+.game-section {
+  padding: var(--bubble-spacing-xl) 0;
+  background: linear-gradient(
+    135deg,
+    var(--milk-froth) 0%,
+    var(--herbal-mint) 100%
+  );
+}
+
+.game-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--bubble-spacing-sm);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-iframe {
+  width: 100%;
+  max-width: 1080px;
+  height: 80vh;
+  border-radius: var(--bubble-radius-lg);
+  box-shadow: 0 10px 30px var(--shadow-deep);
+  background: var(--cup-clear);
+  transition: var(--bubble-transition);
+}
+
+.game-iframe:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px var(--shadow-deep);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .game-iframe {
+    height: 70vh;
+    border-radius: var(--bubble-radius-md);
+  }
+
+  .game-section {
+    padding: var(--bubble-spacing-lg) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-iframe {
+    height: 70vh;
+    border-radius: var(--bubble-radius-sm);
+  }
+
+  .game-container {
+    padding: 0 var(--bubble-spacing-xs);
+  }
+}

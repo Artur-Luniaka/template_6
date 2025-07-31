@@ -1,0 +1,24 @@
+{
+  "instructions": [
+    {
+      "title": "Choose Your Base Tea",
+      "description": "Start by selecting your favorite tea base. You can choose from black tea, green tea, oolong tea, or herbal tea. Each base will give your bubble tea a unique flavor profile.",
+      "tips": "Green tea is perfect for a lighter, more refreshing taste, while black tea provides a stronger, more robust flavor."
+    },
+    {
+      "title": "Add Your Favorite Flavor",
+      "description": "Mix in your preferred flavor syrup or powder. Popular choices include mango, strawberry, lychee, and passion fruit. You can also combine multiple flavors for a unique blend.",
+      "tips": "Start with a small amount of flavor and adjust to your taste preference. Remember, you can always add more!"
+    },
+    {
+      "title": "Select Your Toppings",
+      "description": "Choose from a variety of toppings like tapioca pearls, pudding, jelly, or popping boba. These add texture and fun to your drink.",
+      "tips": "Tapioca pearls are the classic choice, but don't be afraid to try new combinations!"
+    },
+    {
+      "title": "Shake & Enjoy",
+      "description": "Give your bubble tea a good shake to mix all the ingredients together. This ensures every sip has the perfect balance of flavors and toppings.",
+      "tips": "Shake gently to avoid breaking the tapioca pearls, but make sure everything is well mixed."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "reviews": [
+    {
+      "name": "Sarah Chen",
+      "avatar": "👩‍💻",
+      "rating": 5,
+      "comment": "This game is absolutely addictive! I love experimenting with different flavor combinations. The visual effects are so satisfying when you create the perfect blend."
+    },
+    {
+      "name": "Mike Rodriguez",
+      "avatar": "👨‍🎮",
+      "rating": 5,
+      "comment": "As someone who's never tried bubble tea before, this game taught me so much about the different flavors and combinations. Now I'm a bubble tea expert!"
+    },
+    {
+      "name": "Emma Thompson",
+      "avatar": "👩‍🎨",
+      "rating": 4,
+      "comment": "The customization options are amazing! I love unlocking new cups and decorations. It's like having my own virtual bubble tea shop."
+    },
+    {
+      "name": "Alex Kim",
+      "avatar": "👨‍🍳",
+      "rating": 5,
+      "comment": "Perfect for stress relief! There's something so satisfying about watching the ingredients mix together. The animations are smooth and beautiful."
+    },
+    {
+      "name": "Lisa Wang",
+      "avatar": "👩‍🎓",
+      "rating": 4,
+      "comment": "Great educational value too! I learned about different tea types and flavor profiles. The game makes learning fun and interactive."
+    },
+    {
+      "name": "David Park",
+      "avatar": "👨‍💼",
+      "rating": 5,
+      "comment": "The mobile-first design is perfect! I can play this game anywhere, anytime. The touch controls are intuitive and responsive."
+    }
+  ]
+}

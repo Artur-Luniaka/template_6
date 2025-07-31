@@ -1,0 +1,44 @@
+{
+  "blends": [
+    {
+      "name": "Classic Milk Tea",
+      "base": "Black Tea",
+      "flavor": "Milk",
+      "topping": "Tapioca Pearls",
+      "difficulty": "Easy",
+      "popularity": 5
+    },
+    {
+      "name": "Matcha Paradise",
+      "base": "Green Tea",
+      "flavor": "Matcha",
+      "topping": "Red Bean",
+      "difficulty": "Medium",
+      "popularity": 4
+    },
+    {
+      "name": "Strawberry Dream",
+      "base": "Herbal Tea",
+      "flavor": "Strawberry",
+      "topping": "Popping Boba",
+      "difficulty": "Easy",
+      "popularity": 4
+    },
+    {
+      "name": "Mango Tango",
+      "base": "Oolong Tea",
+      "flavor": "Mango",
+      "topping": "Coconut Jelly",
+      "difficulty": "Medium",
+      "popularity": 3
+    },
+    {
+      "name": "Lychee Love",
+      "base": "Green Tea",
+      "flavor": "Lychee",
+      "topping": "Lychee Jelly",
+      "difficulty": "Hard",
+      "popularity": 5
+    }
+  ]
+}
