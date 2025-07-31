@@ -155,13 +155,10 @@ body {
 
 .teahead-nav-list {
   list-style: none;
-  padding: var(--bubble-spacing-sm);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-top: var(--bubble-spacing-xl);
-  height: 100%;
 }
 
 .teahead-nav-item {
@@ -179,6 +176,10 @@ body {
   transition: var(--bubble-transition);
   font-size: 1.2rem;
   font-weight: 500;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 }
 
 .teahead-nav-link:hover {
@@ -1736,6 +1737,10 @@ body {
     padding: var(--bubble-spacing-xs) var(--bubble-spacing-sm);
     font-size: 1rem;
     font-weight: normal;
+
+    @media (max-width: 768px) {
+      padding: 0;
+    }
   }
 
   .burger-bubble-menu {
